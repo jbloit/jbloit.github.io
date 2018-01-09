@@ -2,13 +2,12 @@
 layout: post
 title: "iOS sync several videos to audio clock"
 date: "2018-01-09 09:52:49 +0100"
-published: true
-category: "ios"
-tags: "ios" "video"
+repo: "https://github.com/jbloit/avplayer_mutipleVideos"
+tags:
+  - "iOS"
+  - "video"
 ---
 
-
-# [Play N videos in sync](https://github.com/jbloit/avplayer_mutipleVideos)
 
 This is a toy app to try and understand how many videos I can play simultaneously on iOS. Some forums say it's 4. I seem to hit a limit at 16.
 
@@ -23,7 +22,7 @@ This is a toy app to try and understand how many videos I can play simultaneousl
 - [How about using OpenGL or Metal?](https://stackoverflow.com/questions/38130497/is-metal-a-good-framework-to-use-for-multiple-video-rendering)
 
 ## Dev log
-### Sync videos on audio clock
+### Sync videos to audio clock
 [works](https://github.com/jbloit/avplayer_mutipleVideos/tree/80d1573fe9fc7a3a49cc05a3403e25c0297aed33)
 Video playback start time and rate are set given the audio clock. The main things to grasp here, are that
 - A player's Timebase can has a rate and sync time relative to a host clock
