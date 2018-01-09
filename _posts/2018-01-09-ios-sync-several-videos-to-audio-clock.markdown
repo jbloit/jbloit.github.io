@@ -2,6 +2,9 @@
 layout: post
 title: "iOS sync several videos to audio clock"
 date: "2018-01-09 09:52:49 +0100"
+published: true
+category: "ios"
+tags: "ios" "video"
 ---
 
 
