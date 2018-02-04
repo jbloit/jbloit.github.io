@@ -21,6 +21,7 @@ This is a toy app to try and understand how many videos I can play simultaneousl
 - [The four streams limit seems to be unofficially admitted by Apple](https://stackoverflow.com/questions/8608570/avplayeritem-fails-with-avstatusfailed-and-error-code-cannot-decode/9933853#9933853)
 - [Some dev hints from the Pinterest engineers](https://medium.com/@Pinterest_Engineering/building-native-video-pins-7ff89ad3ec33)
 - [How about using OpenGL or Metal?](https://stackoverflow.com/questions/38130497/is-metal-a-good-framework-to-use-for-multiple-video-rendering)
+- [GPU-based image and video processing](https://github.com/BradLarson/GPUImage)
 
 ## Dev log
 ### Sync videos to audio clock
