@@ -4,7 +4,7 @@ title: Fixing Memory Issues - resources
 date: "2018-02-04 17:26:40 +0100"
 ---
 
-A couple good resources I watched on this topic.
+Good resources I found on this topic:
 
 # [WWDC_2013 Fixing Memory Issues](https://developer.apple.com/videos/play/wwdc2013/410/)
 

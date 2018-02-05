@@ -40,4 +40,36 @@ I'm trying to understand which is the exact upper limit: is it the number of AVP
 
 > It is not a limit on the number of instances of AVPlayer, or AVPlayerItem. Rather,it is the association of AVPlayerItem with an AVPlayer which creates a "render pipeline", and you are limited to 4 of these.
 
-(Apparently though, 4 is not a hard limit, and is rather dependent on which hardware you are running)
+(Apparently though, 4 is not a hard limit, and is rather dependent on which hardware you are running).
+
+After some testing, 16 video pipelines is the limit I reach on iPads.
+
+## Preroll completion and memory leaks
+I had a bug where videos would stop loading after I displayed 16 pipelines, even though the videos where not displayed anymore. I found out the controller object that was holding the videos was not deallocated after I set it to nil (its *deinit* method was never called). It turned out to be a retain cycle caused by the preroll completion handler:
+
+```Swift
+moviePlayer.preroll(atRate: 1.0, completionHandler: {(complete: Bool) in
+    if complete {
+        self?.moviePlayer.setRate(1.0, time: kCMTimeInvalid, atHostTime: startTime)
+    } else {
+        print("preload not done")
+    }
+})
+```
+In the above snippet, the completionHandler closure is an object that holds a strong reference to the parent class with *self*. This creates a retain cycle which prevents the parent class from being released.
+
+The fix:
+
+```Swift
+moviePlayer.preroll(atRate: 1.0, completionHandler: { [weak self] (complete: Bool) in
+    if complete {
+        self?.moviePlayer.setRate(1.0, time: kCMTimeInvalid, atHostTime: startTime)
+    } else {
+        print("preload not done")
+    }
+})
+```
+
+This is a nice [FAQ on completion handlers](https://grokswift.com/completion-handler-faqs/#weak_self).
+
+Also the *Debug Memory Graph* view in XCode helped me point to the completionHandler as being the object holding the reference to the controller class.
