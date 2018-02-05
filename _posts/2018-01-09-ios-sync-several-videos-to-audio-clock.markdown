@@ -72,4 +72,4 @@ moviePlayer.preroll(atRate: 1.0, completionHandler: { [weak self] (complete: Boo
 
 This is a nice [FAQ on completion handlers](https://grokswift.com/completion-handler-faqs/#weak_self).
 
-Also the *Debug Memory Graph* view in XCode helped me point to the completionHandler as being the object holding the reference to the controller class.
+Also the [Debug Memory Graph](https://medium.com/zendesk-engineering/ios-identifying-memory-leaks-using-the-xcode-memory-graph-debugger-e84f097b9d15) view in XCode helped me point to the completionHandler as being the object holding the reference to the controller class.
