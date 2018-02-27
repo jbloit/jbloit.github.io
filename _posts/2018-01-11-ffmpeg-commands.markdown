@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "FFmpeg recipes"
+title: "FFmpeg cheat sheet"
 date: "2018-01-11 14:46:19 +0100"
 ---
 
-Useful recipes for when using FFmpeg. Save some googling time.
+Recipes for using FFmpeg. Save some googling time.
 
 ### Thumb videos
 Shrink down all mov videos in a folder. Rescale to given width (320), preserve ratio, and apply compression.

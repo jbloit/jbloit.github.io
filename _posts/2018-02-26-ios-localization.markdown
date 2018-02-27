@@ -17,7 +17,43 @@ date: "2018-02-26 10:53:34 +0100"
 
 ### [Internationalizing Your Code](https://developer.apple.com/library/content/documentation/MacOSX/Conceptual/BPInternational/InternationalizingYourCode/InternationalizingYourCode.html)
 
+- Make sure all strings needing localization are declared with ```NSLocalizedString()```.
+Example for an alert message:
+```Swift
+let alert = UIAlertController(title: NSLocalizedString("Attention", comment: "titre popup erreur compte utilisateur"), message: NSLocalizedString("Vous êtes sur le point de supprimer une classe", comment: "popup avertissement suppression classe"), preferredStyle: UIAlertControllerStyle.alert)
+alert.addAction(UIAlertAction(title: NSLocalizedString("Annuler", comment: "suppression classe"), style: UIAlertActionStyle.default, handler: { (alert: UIAlertAction!) in
+    self.showSuppressButtons = false
+```
 
+- Using the ```genstrings``` command line tool, extract all localized strings from your code:
+```bash
+find . -name \*.swift | xargs genstrings -o .
+```
+This creates a ```Localizable.strings``` file containing the strings to translate. The above code example will generate the following file:
+
+```Swift
+/* titre popup erreur compte utilisateur */
+"Attention" = "Attention";
+
+/* popup avertissement suppression classe */
+"Vous êtes sur le point de supprimer une classe" = "Vous êtes sur le point de supprimer une classe";
+
+/* suppression classe */
+"Annuler" = "Annuler";
+```
+- Do the actual translation in the ```Localizable.strings``` file :
+
+```Swift
+/* titre popup erreur compte utilisateur */
+"Attention" = "Warning";
+
+/* popup avertissement suppression classe */
+"Vous êtes sur le point de supprimer une classe" = "You are about to delete a class account";
+
+/* suppression classe */
+"Annuler" = "Cancel";
+```
+- Save the file in your ```xxx.lproj``` folder for the appropriate language. (```en.proj``` in this case)
 
 # Resources
 - [quick tutorial](https://medium.com/lean-localization/ios-localization-tutorial-938231f9f881)

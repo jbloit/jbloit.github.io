@@ -4,6 +4,8 @@ title: "super collider cheat sheet"
 date: "2018-02-25 18:56:44 +0100"
 ---
 
+Survival kit when starting out with super collider - as I am.
+
 ### Run a command
 - Click to place the cursor somewhere on the same line as the code and then press ```Shift-Enter```
 - stop: ```cmd-.```

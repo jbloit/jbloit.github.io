@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Fixing Memory Issues - resources
+title: Fixing Memory Issues in XCode
 date: "2018-02-04 17:26:40 +0100"
 ---
 
-Good resources I found on this topic:
+Bookmarking nice resources on the topic.
 
 # [WWDC_2013 Fixing Memory Issues](https://developer.apple.com/videos/play/wwdc2013/410/)
 
