@@ -4,6 +4,8 @@ title: "ios localization"
 date: "2018-02-26 10:53:34 +0100"
 ---
 
+Apps that speak your language
+
 ### Internationalization vs localization
 
 - Internationalization: process of making your app able to adapt to different languages, regions, and cultures.
