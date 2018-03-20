@@ -23,6 +23,7 @@ double clicking on first line (parenthesis) selects all.
 "Ishmael.".postln;
 )
 ```
+when selected, run block with ```cmd-Enter```
 
 ### Server
 - boot: ```cmd-b```
@@ -78,6 +79,27 @@ f = { arg a, b;
 ```
 - interpreter variables: The letters a to z are what are called interpreter variables. These are pre-declared when you start up SC, and have an unlimited, or 'global', scope. This makes them useful for quick tests or examples.
 
+- environment variables: create / access variables outside the current scope. Access with tilde key character;
+
+[From the forums](http://new-supercollider-mailing-lists-forums-use-these.2681727.n2.nabble.com/global-variables-td7421932.html):
+
+```
+The tilde doesn't declare a variable, it's just a shortcut for a lookup in the currentEnvironment (a Dictionary-like structure).
+
+~c = ~a + ~b; // will only work when ~a/~b are set
+
+translates (almost) to:
+
+currentEnvironment['c'] = currentEnvironment['a'] + currentEnvironment['b']; // now ~c is the sum of ~a and ~b
+
+Please also note, that a and ~a are not the same (a is a global variable, ~a is an environment variable):
+
+~a = 10;
+a = 5;
+
+~a + a;  // 15
+```
+
 ## UGens
 These are objects which produce audio or control signals
 - audio rate:
@@ -106,6 +128,63 @@ SC has no operator precedence, i.e. math operations are done in order, and divis
 ```
 4 + (2* 8)
 ```
+
+## External control
+
+### OSC
+- check incoming port
+```
+NetAddr.langPort;
+```
+will post the port SC is listening to. By default, this is ```57120```.
+
+- this example prints the received OSC message and other info when receiving "/main/toggle":
+```
+(
+s.boot;
+OSCdef.new(\toggle,
+	{|msg, time, addr, recvPort|
+		[msg, time, addr, recvPort].postln;
+}, '/main/toggle' );
+)
+```
+### MIDI
+
+- connect all devices:
+```
+MIDIClient.init;
+MIDIIn.connectAll;
+```
+- list sources and only connect one device:
+```
+MIDICient.sources;
+MIDIIn.connect(0);
+```
+- map events to a function
+
+```
+MIDIdef.noteOn(\noteOnTest, {"keydown".postln});
+MIDIdef.cc(\ccIn, {"ccIn".postln});
+```
+
+- parse the event using args in function :
+
+```
+(
+MIDIdef.cc(\ccIn, {
+	arg key, func, ccNum, chan, srcID, argTemplate, dispatcher;
+	key.postln;
+});
+)
+```
+
+- free a midi def callback:
+```
+MIDIdef.free(\ccIn);
+```
+
+
+
 
 # resources
 - [The SuperCollider book](http://supercolliderbook.net/)
