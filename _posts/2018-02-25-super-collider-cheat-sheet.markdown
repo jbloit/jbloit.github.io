@@ -150,6 +150,7 @@ OSCdef.new(\toggle,
 ```
 ### MIDI
 
+
 - connect all devices:
 ```
 MIDIClient.init;
@@ -168,12 +169,23 @@ MIDIdef.cc(\ccIn, {"ccIn".postln});
 ```
 
 - parse the event using args in function :
-
 ```
+// CCs
 (
 MIDIdef.cc(\ccIn, {
 	arg key, func, ccNum, chan, srcID, argTemplate, dispatcher;
 	key.postln;
+});
+)
+```
+
+```
+// notes
+(
+MIDIdef.noteOn(\notes, {
+	arg vel, nn;
+	[vel, nn].postln;
+	Synth.new(\tone, [\freq, nn.midicps, \amp, vel.linexp(1,127,0.001, 0.3)]);
 });
 )
 ```
@@ -183,6 +195,7 @@ MIDIdef.cc(\ccIn, {
 MIDIdef.free(\ccIn);
 ```
 
+[Eli Fiedsteel tutorial - MIDI part 1](https://www.youtube.com/watch?v=Oz4KYZ9KLc0)
 
 
 
