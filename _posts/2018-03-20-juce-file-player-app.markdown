@@ -4,7 +4,7 @@ title: "Juce: file player app"
 date: "2018-03-20 16:46:17 +0100"
 ---
 
-Build a simple app that plays back a file. The goal is to have a skeleton app to wrap convert into an android app with native UI, as in this [ADC'2015 video](https://www.youtube.com/watch?v=R2WhYU2JTfQ).
+Build a simple app that plays back a file. The goal is to have a skeleton app to later convert into an android app with native UI, as in this [ADC'2015 video](https://www.youtube.com/watch?v=R2WhYU2JTfQ).
 
 
 ### resources
