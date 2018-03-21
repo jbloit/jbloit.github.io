@@ -2,6 +2,7 @@
 layout: post
 title: "Juce audio + Android native UI"
 date: "2018-03-20 16:46:17 +0100"
+repo: "https://github.com/jbloit/JuceAudio_androidNativeUI"
 ---
 
 Try and make the simplest app that mixes native Android UI with a Juce audio engine, as in this talk: [ADC'2015 video](https://www.youtube.com/watch?v=R2WhYU2JTfQ).
@@ -12,6 +13,7 @@ Try and make the simplest app that mixes native Android UI with a Juce audio eng
 - Generate project from the AudioApplication template in Projucer.
 - Fill method bodies from code snippets in the [simple noise synth tutorial](https://docs.juce.com/master/tutorial_simple_synth_noise.html)
 - Make sure to select the right *minimum SDK version* in the Projucer android exporters menu (has to correspond to the SDKs installed in Android Studio, see [Android studio setup](https://docs.juce.com/master/tutorial_android_studio.html)).
+
 
 ## Juce cheat sheet
 
