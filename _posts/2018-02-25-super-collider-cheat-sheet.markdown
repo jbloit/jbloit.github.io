@@ -149,7 +149,7 @@ OSCdef.new(\toggle,
 )
 ```
 ### MIDI
-
+See [Eli Fieldsteel tutorial - MIDI part 1](https://www.youtube.com/watch?v=Oz4KYZ9KLc0)
 
 - connect all devices:
 ```
@@ -195,9 +195,19 @@ MIDIdef.noteOn(\notes, {
 MIDIdef.free(\ccIn);
 ```
 
-[Eli Fiedsteel tutorial - MIDI part 1](https://www.youtube.com/watch?v=Oz4KYZ9KLc0)
+## System
+See [beginning of this tutorial](https://www.youtube.com/watch?v=P85X1Ut3Hfc&t=246s)
+- list audio devices: ```ServerOptions.devices```
+- set output device:
+```
+(
+s=Server.local;
+s.options.outDevice_("iConnectAudio4+");
+s.quit;
+s.boot;
+)
+```
 
-
-
-# resources
+# Resources
+- [Programming course resources from RedFrik](https://github.com/redFrik)
 - [The SuperCollider book](http://supercolliderbook.net/)
