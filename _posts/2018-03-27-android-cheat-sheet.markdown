@@ -11,7 +11,21 @@ the build system running under the hood. the app can actually be built from comm
 
 When syncing a project with Gradle, Android studio updates the IDE's project structure based on the Gradle files.
 
-[Building Android Apps tutorial](https://guides.gradle.org/building-android-apps/)
+#### Notes from [Building Android Apps tutorial](https://guides.gradle.org/building-android-apps/)
+
+Library modules:
+> The file settings.gradle is used by Gradle to configure the multi-project build. It should consist of a single line:
+```
+include ':app'
+```
+This tells Gradle that the app sub-directory is also a Gradle project. If, at some later time, you were to add an Android Library to this project through the available wizard, another project sub-directory would be created and added to this file.
+**--------------**
+
+Debug build types
+> Below this section is a block called buildTypes. By default, Android apps support two build types, debug and release. This section allows you to configure each however you like. The debug section is not shown here, implying that all the default settings for debug are being used.
+**--------------**
+
+
 
 
 ### logging
