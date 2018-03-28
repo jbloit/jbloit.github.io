@@ -23,7 +23,7 @@ When syncing a project with Gradle, Android studio updates the IDE's project str
 ### memory load
 Trying to get a sense of how android behaves under memory load. I have a simple C++ class for leaking memory. Running through JNI.
 
-```
+```c++
 #include "MemoryLeakTest.h"
 #include <iostream>
 
