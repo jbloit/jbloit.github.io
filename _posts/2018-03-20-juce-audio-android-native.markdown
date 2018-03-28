@@ -7,6 +7,8 @@ repo: "https://github.com/jbloit/JuceAudio_androidNativeUI"
 
 Try and make the simplest app that mixes native Android UI with a Juce audio engine, as in this talk: [ADC'2015 video](https://www.youtube.com/watch?v=R2WhYU2JTfQ).
 
+**NB: THIS IS PAUSED AS I COULDN'T FIND A WAY TO THIS. WATCHING THE JUCE FORUMS MEANWHILE**
+
 # Dev log
 ## Noise-making Juce audio app
 
