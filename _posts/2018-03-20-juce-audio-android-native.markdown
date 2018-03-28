@@ -14,6 +14,33 @@ Try and make the simplest app that mixes native Android UI with a Juce audio eng
 - Fill method bodies from code snippets in the [simple noise synth tutorial](https://docs.juce.com/master/tutorial_simple_synth_noise.html)
 - Make sure to select the right *minimum SDK version* in the Projucer android exporters menu (has to correspond to the SDKs installed in Android Studio, see [Android studio setup](https://docs.juce.com/master/tutorial_android_studio.html)).
 
+[>> tested commit](https://github.com/jbloit/JuceAudio_androidNativeUI/tree/feaff02caa6dc3b75893e982ecabc4b80e1390c5)
+
+This runs on Android, but Juce (v5.3) takes control of the main activity. Looking at the generated java code, it looks structurally different to what is presented in Adamski's talk. I need to figure out C++ - java communication with JNI before I can make sense of this. I'm also starting to think that since I don't plan to use Juce for GUI in my current project, I should focus on embedding Juce as a C++ lib within the java main app... [well it looks like we'll need to wait for that](https://forum.juce.com/t/jnienv-not-initialized-when-building-an-android-library-aar-out-of-a-juce-project/22209/14) [yep](https://forum.juce.com/t/build-juce-shared-library-for-android-stuck/17005/6)
+
+
+## Getting started with JNI & NDK
+
+First, gather a few resources:
+### JNI tutorials and resources
+1. [J.Kemp 2012 JNI tutorial, OSX](http://mrjoelkemp.com/2012/01/getting-started-with-jni-and-c-on-osx-lion/)
+2. [NTU (singapore univ) JNI Tutorial](https://www3.ntu.edu.sg/home/ehchua/programming/java/JavaNativeInterface.html)
+3. [Getting Started with the NDK](https://developer.android.com/ndk/guides/index.html)
+4. [NDK Samples](https://github.com/googlesamples/android-ndk/tree/master)
+
+### General notes
+- **NDK vs JNI**: compile C and C++ with NDK, use JNI for interfacing.
+- **CMAKE** is used to compile native libs
+
+### Hands on
+#### NDK Samples / Hello-jni
+[source](https://github.com/googlesamples/android-ndk/tree/master/hello-jni)
+
+#### Codelab: making waves part 1
+[source](https://codelabs.developers.google.com/codelabs/making-waves-1-synth/index.html?index=..%2F..%2Findex#0)
+
+#### Codelab: making waves part 2
+[source](https://codelabs.developers.google.com/codelabs/making-waves-2-sampler/#0)
 
 ## Juce cheat sheet
 
