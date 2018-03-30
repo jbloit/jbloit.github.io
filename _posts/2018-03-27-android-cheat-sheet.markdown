@@ -77,3 +77,18 @@ I'm running it on an app that just plays a sine wave. Profiling on samsung s6, i
 - at i<5000, app takes about 5 secs to load. audio can be interrupted. profiler reports 85,19 Mb usage from native.
 - at i<50000, app takes about 7 secs to load. audio is interrupted. profiler reports 0.77GB from native.
 - at i<500000, app stays blank, profilers shows spikes, going up to about 1GB, then back to 0 etc...
+
+## Accessing large files
+Notes from the [android documentation on APK Expansion Files](https://developer.android.com/google/play/expansion-files.html#Overview)
+
+- app max size = 100Mb
+- large resource files need to be bundled separately, as *APK expansion files*. (2 x 2Gb files, main and patch).
+- expansion files are downloaded from google play at installation time
+- they are stored in the *shared storage location* of the device, on the SD card.
+- one can use the *Downloader Library* to manage the download process
+- reading from zipped expansion files is managed with the *APK Expansion Zip Library*
+- before uploading to google play, test the file reads and file downloads
+
+### apk expansion tutorials
+- [APK Expansion Files pour applications Android (2013)](https://github.com/Infinite-Studio/tuto-apk-expansion-files)
+- [How to Set Up Android App to Support Expansion Files (2015)](http://sapandiwakar.in/how-to-set-up-android-app-to-support-expansion-files/)
