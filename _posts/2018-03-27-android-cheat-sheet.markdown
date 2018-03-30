@@ -26,7 +26,22 @@ Debug build types
 **--------------**
 
 
+### NDK: Static vs. shared Library
+- static: .a, precompiled, bundled in app, NDK strips unused parts.
+- shared (or dynamic): .so, compiled at runtime. can include static libs.
 
+NDK objects can only be loaded dynamically via JNI, loaded at run time. So there is at least one shared lib loaded at runtime, that can load more libs, either static or dynamic(or shared).
+
+[source](https://stackoverflow.com/questions/3213789/difference-between-static-and-shared-libraries-in-androids-ndk)
+
+[Hello-libs: google NDK tutorial on libs](https://github.com/googlesamples/android-ndk/tree/master/hello-libs)
+
+
+
+
+### CMake or Android.mk
+- short answer: use one or the other. CMake has a life outside of Android projects.
+- longer answer: [see this thread](https://stackoverflow.com/questions/39589427/difference-between-cmake-and-ndk-build-in-android-studio-project)
 
 ### logging
 - [Android doc: Logcat](https://developer.android.com/studio/debug/am-logcat.html)
