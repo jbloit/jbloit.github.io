@@ -63,7 +63,7 @@ I'm running it on an app that just plays a sine wave. Profiling on samsung s6, i
 - at i<50000, app takes about 7 secs to load. audio is interrupted. profiler reports 0.77GB from native.
 - at i<500000, app stays blank, profilers shows spikes, going up to about 1GB, then back to 0 etc...
 
-## Accessing large files
+## Accessing large files: via expansion files
 Notes from the [android documentation on APK Expansion Files](https://developer.android.com/google/play/expansion-files.html#Overview)
 
 - app max size = 100Mb
@@ -73,6 +73,15 @@ Notes from the [android documentation on APK Expansion Files](https://developer.
 - one can use the *Downloader Library* to manage the download process
 - reading from zipped expansion files is managed with the *APK Expansion Zip Library*
 - before uploading to google play, test the file reads and file downloads
+
+## Accessing large files: via external storage
+- transfer files on the device's sdcard via Android File Transfer app.
+- retrieve them with ```Environment.getExternalStoragePublicDirectory("pathToFile")```
+- if working with virtual device:
+1. make an sdcard image with [mksdcard](https://developer.android.com/studio/command-line/mksdcard)
+2. attach the image either from command line as explained in previous link (```emulator -avd Pixel_API_25 -sdcard mySdCardFile.img```), or in the device manager advanced settings.
+3. push files to the (running) virtual device via the device monitor tool (Tools>Android>Android Device Monitor)
+
 
 ### apk expansion tutorials
 - [APK Expansion Files pour applications Android (2013)](https://github.com/Infinite-Studio/tuto-apk-expansion-files)
