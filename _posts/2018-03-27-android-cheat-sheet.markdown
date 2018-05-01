@@ -88,6 +88,9 @@ Notes from the [android documentation on APK Expansion Files](https://developer.
 - one can use the *Downloader Library* to manage the download process
 - reading from zipped expansion files is managed with the *APK Expansion Zip Library*
 - before uploading to google play, test the file reads and file downloads
+### apk expansion tutorials
+- [APK Expansion Files pour applications Android (2013)](https://github.com/Infinite-Studio/tuto-apk-expansion-files)
+- [How to Set Up Android App to Support Expansion Files (2015)](http://sapandiwakar.in/how-to-set-up-android-app-to-support-expansion-files/)
 
 ## Accessing large files: via external storage
 - transfer files on the device's sdcard via Android File Transfer app.
@@ -96,8 +99,3 @@ Notes from the [android documentation on APK Expansion Files](https://developer.
 1. make an sdcard image with [mksdcard](https://developer.android.com/studio/command-line/mksdcard)
 2. attach the image either from command line as explained in previous link (```emulator -avd Pixel_API_25 -sdcard mySdCardFile.img```), or in the device manager advanced settings.
 3. push files to the (running) virtual device via the device monitor tool (Tools>Android>Android Device Monitor)
-
-
-### apk expansion tutorials
-- [APK Expansion Files pour applications Android (2013)](https://github.com/Infinite-Studio/tuto-apk-expansion-files)
-- [How to Set Up Android App to Support Expansion Files (2015)](http://sapandiwakar.in/how-to-set-up-android-app-to-support-expansion-files/)
