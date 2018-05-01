@@ -209,5 +209,5 @@ s.boot;
 ```
 
 # Resources
-- [Programming course resources from RedFrik](https://github.com/redFrik)
+- [Programming course resources from redFrik](https://github.com/redFrik)
 - [The SuperCollider book](http://supercolliderbook.net/)
